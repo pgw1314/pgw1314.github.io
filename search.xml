@@ -4,13 +4,106 @@
   
     
     <entry>
-      <title>这是一篇测试文章</title>
-      <link href="/2019/10/19/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-      <url>/2019/10/19/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+      <title>.gitignore设置跟踪忽略文件夹中文件</title>
+      <link href="/2019/10/19/gitignore%E8%AE%BE%E7%BD%AE%E8%B7%9F%E8%B8%AA%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%96%87%E4%BB%B6/"/>
+      <url>/2019/10/19/gitignore%E8%AE%BE%E7%BD%AE%E8%B7%9F%E8%B8%AA%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%96%87%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>这里就是正文、</p><p>列表:</p><ul><li>中国</li><li>美国</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="常用规则"><a href="#常用规则" class="headerlink" title="常用规则"></a>常用规则</h4><p> <img src="https://s2.ax1x.com/2019/10/19/KmL010.png" alt="常用规则"><br><strong>注意：</strong>如果你创建.gitignore文件之前就push了某一文件，那么即使你在.gitignore文件中写入过滤该文件的规则，该规则也不会起作用，git仍然会对该文件进行版本管理。</p><h4 id="配置语法"><a href="#配置语法" class="headerlink" title="配置语法"></a>配置语法</h4><ul><li>以斜杠“/”开头表示目录；</li><li>以星号“*”通配多个字符；</li><li>以问号“?”通配单个字符</li><li>以方括号“[]”包含单个字符的匹配列表；</li><li>以叹号“!”表示不忽略(跟踪)匹配到的文件或目录。</li></ul><p><strong>注意：</strong> git 对于 .gitignore配置文件是按行从上到下进行规则匹配的</p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><ol><li>执行*[Rr]elease/*，忽略根目录下符合条件的文件夹下的所有文件</li><li>执行!<em>[Rr]elease/</em>.txt，追踪根目录下符合条件的文件夹下的txt文件</li><li>执行!*[Rr]elease/files/，追踪根目录下符合条件的文件夹下的files文件夹</li><li>执行*[Rr]elease/files/*，忽略files文件夹下的所有文件</li><li>执行!<em>[Rr]elease/files/</em>.txt，追踪files文件夹下的txt文件</li></ol><p>原文链接：<a href="https://blog.csdn.net/u011475134/article/details/71521725" target="_blank" rel="noopener">https://blog.csdn.net/u011475134/article/details/71521725</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git忽略文件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git基本操作和错误</title>
+      <link href="/2019/10/19/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E9%94%99%E8%AF%AF/"/>
+      <url>/2019/10/19/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E9%94%99%E8%AF%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="本地创建仓库操作"><a href="#本地创建仓库操作" class="headerlink" title="本地创建仓库操作"></a>本地创建仓库操作</h3><h4 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><h4 id="将文件添加进Git"><a href="#将文件添加进Git" class="headerlink" title="将文件添加进Git"></a>将文件添加进Git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名  </span><br><span class="line">git add . <span class="comment">#将所有的文件全部添加到Git</span></span><br></pre></td></tr></table></figure><h4 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"描述信息"</span></span><br></pre></td></tr></table></figure><h4 id="删除文件或文件夹"><a href="#删除文件或文件夹" class="headerlink" title="删除文件或文件夹"></a>删除文件或文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached target              <span class="comment"># 删除target文件夹</span></span><br><span class="line">git commit -m <span class="string">'删除了target'</span>        <span class="comment"># 提交,添加操作说明</span></span><br></pre></td></tr></table></figure><h3 id="Git远程仓库操作"><a href="#Git远程仓库操作" class="headerlink" title="Git远程仓库操作"></a>Git远程仓库操作</h3><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br></pre></td></tr></table></figure><h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git remote add 名称 远程仓库地址</span></span><br><span class="line">git remote add origin git@git.coding.net:pgw1314/shells.git</span><br></pre></td></tr></table></figure><h4 id="推送的远程仓库"><a href="#推送的远程仓库" class="headerlink" title="推送的远程仓库"></a>推送的远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git push 仓库名  分支</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure><h4 id="更新远程仓库"><a href="#更新远程仓库" class="headerlink" title="更新远程仓库"></a>更新远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git pull 仓库名 分支</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure><h4 id="删除远程仓库"><a href="#删除远程仓库" class="headerlink" title="删除远程仓库"></a>删除远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote remove 仓库名称</span><br></pre></td></tr></table></figure><h3 id="Git常见错误"><a href="#Git常见错误" class="headerlink" title="Git常见错误"></a>Git常见错误</h3><h5 id="版本冲突"><a href="#版本冲突" class="headerlink" title="版本冲突"></a>版本冲突</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: failed to push some refs to <span class="string">'git@git.coding.net:xx/xx.git'</span></span><br><span class="line"><span class="comment">#解决办法</span></span><br><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git基本操作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chrome浏览器原生滚动截图</title>
+      <link href="/2019/10/19/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE/"/>
+      <url>/2019/10/19/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<ol><li>Ctrl+Shift+I（Windows）/F12 或者 Alt+Command+I（Mac）调出开发者工具</li><li>Ctrl+Shift +P(Windows) 或 Command+Shift+P(Mac)来打开命令行</li><li>在命令行中输入”Screen”，可以看到三个选项</li></ol><blockquote><p>整个网页（Capture full size screenshot）<br>节点网页（Capture node screenshot）<br>当前屏幕（Capture screenshot）</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Chrome </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+            <tag> Mac </tag>
+            
+            <tag> 屏幕截图 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>删除Chrome地址栏记录的方法</title>
+      <link href="/2019/10/19/%E5%88%A0%E9%99%A4Chrome%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%AE%B0%E5%BD%95%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/10/19/%E5%88%A0%E9%99%A4Chrome%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%AE%B0%E5%BD%95%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>Mac快捷键：Shift + fn + Delete<br>Windows快捷键：Shift + Delete</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mac </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+            <tag> Mac </tag>
+            
+        </tags>
       
     </entry>
     
