@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>OpenCC-简体繁体转换</title>
+      <link href="/2019/10/20/OpenCC-%E7%AE%80%E4%BD%93%E7%B9%81%E4%BD%93%E8%BD%AC%E6%8D%A2/"/>
+      <url>/2019/10/20/OpenCC-%E7%AE%80%E4%BD%93%E7%B9%81%E4%BD%93%E8%BD%AC%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<p>最近使用中文维基百科数据训练Word2Vec时，发现数据里面包含了很多繁体字，这就很尴尬了。这时候就知道OpenCC的强大了。哈哈，本来打算直接使用python里面的opencc模块的，但是在安装，编译opencc时遇到了各种错误。花费了很长时间，终于安装成功，但是文本处理起来效率很低。最终选择了直接在linux下安装OpenCC，处理的效率着实安慰了我受伤的心 – 很快，特别快。<br>好啦，接下来总结下OpenCC的安装方法，万一以后又用到它了呢？主要参考这篇博客：</p><h5 id="1-检查下linux环境编译环境"><a href="#1-检查下linux环境编译环境" class="headerlink" title="1.检查下linux环境编译环境"></a>1.检查下linux环境编译环境</h5><p>检查是否已经安装cmake以及git，如果没有，那就通过yum安装好。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install cmake</span><br><span class="line">yum install git</span><br></pre></td></tr></table></figure><h5 id="2-克隆OpennCC开源项目。"><a href="#2-克隆OpennCC开源项目。" class="headerlink" title="2.克隆OpennCC开源项目。"></a>2.克隆OpennCC开源项目。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/BYVoid/OpenCC</span><br></pre></td></tr></table></figure><h5 id="3-编译OpenCC"><a href="#3-编译OpenCC" class="headerlink" title="3.编译OpenCC"></a>3.编译OpenCC</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> OpenCC</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h5 id="4-创建libopencc-so-2链接"><a href="#4-创建libopencc-so-2链接" class="headerlink" title="4.创建libopencc.so.2链接"></a>4.创建libopencc.so.2链接</h5><p>如果不知道libopencc.so.2的路径，可以通过find / -name libopencc.so.2查找。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/lib/libopencc.so.2 /usr/lib64/libopencc.so.2</span><br></pre></td></tr></table></figure><h5 id="5-检查OpenCC版本号"><a href="#5-检查OpenCC版本号" class="headerlink" title="5.检查OpenCC版本号"></a>5.检查OpenCC版本号</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencc --version</span><br></pre></td></tr></table></figure><h5 id="6-测试用例"><a href="#6-测试用例" class="headerlink" title="6.测试用例"></a>6.测试用例</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 繁体转简体</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'歐幾里得 西元前三世紀的希臘數學家'</span> | opencc -c t2s</span><br><span class="line">欧几里得 西元前三世纪的希腊数学家</span><br><span class="line"><span class="comment"># 简体转繁体</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'欧几里得 西元前三世纪的希腊数学家'</span> | opencc -c s2t</span><br><span class="line">歐幾里得 西元前三世紀的希臘數學家</span><br><span class="line"><span class="comment"># 可以通过以下方式直接对文件进行繁简转换</span></span><br><span class="line">opencc -i zhwiki_raw.txt -o zhwiki_t2s.txt -c t2s.json</span><br></pre></td></tr></table></figure><h5 id="7-引用参考"><a href="#7-引用参考" class="headerlink" title="7.引用参考"></a>7.引用参考</h5><ul><li>文章来自：<a href="https://www.jianshu.com/p/834a02d085b6" target="_blank" rel="noopener">https://www.jianshu.com/p/834a02d085b6</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 繁简体转换 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Wordpresss迁移更改域名</title>
       <link href="/2019/10/19/Wordpresss%E8%BF%81%E7%A7%BB%E6%9B%B4%E6%94%B9%E5%9F%9F%E5%90%8D/"/>
       <url>/2019/10/19/Wordpresss%E8%BF%81%E7%A7%BB%E6%9B%B4%E6%94%B9%E5%9F%9F%E5%90%8D/</url>
