@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Centos7 yum安装nodejs</title>
+      <link href="/2019/11/01/Centos7-yum%E5%AE%89%E8%A3%85nodejs.html"/>
+      <url>/2019/11/01/Centos7-yum%E5%AE%89%E8%A3%85nodejs.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在centos7安装nodejs，刚开始用的是网上很多人推荐的下载tar包解压配置环境变量的做法，但是发现在使用npm时经常报错，怀疑是缺少很多依赖包的原因，所以尝试用yum直接安装，于是来到官网，搜寻了下，找到如下网页：<br>Installing Node.js via package manager | Node.js<br>On RHEL, CentOS or Fedora, for Node.js v8 LTS:</p></blockquote><p>在终端执行如下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -</span><br><span class="line"></span><br><span class="line">sudo yum -y install nodejs</span><br></pre></td></tr></table></figure><p>安装成功之后，npm工作正常，没有发现问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> yum </tag>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VPS常用脚本收集</title>
       <link href="/2019/10/24/VPS%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86.html"/>
       <url>/2019/10/24/VPS%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86.html</url>
