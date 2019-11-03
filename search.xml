@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>PhpStorm修改php文件头模板</title>
+      <link href="/2019/11/04/PhpStorm%E4%BF%AE%E6%94%B9php%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A8%A1%E6%9D%BF.html"/>
+      <url>/2019/11/04/PhpStorm%E4%BF%AE%E6%94%B9php%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A8%A1%E6%9D%BF.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>phpstorm设置新建php文件时的头文件，一个帅气的头文件是不是让你码字的心情都更好了呢</p></blockquote><p><img src="/images/1903856-fc1ce89a78313055.png" alt=""></p><p><code>Editor/ File and Code Templates / includes / PHP File Header</code></p><p><img src="/images/1903856-fbf0ea6f43e00717.png" alt=""></p><p>可以在模板中使用一下变量：</p><ul><li>${FILE_NAME}:current file name</li><li>${USER}:current user system login name</li><li>${DATE}:current system date</li><li>${TIME}:current system time</li><li>${YEAR}:current year</li><li>${MONTH}:current month</li><li>${DAY}:current day of the month</li><li>${HOUR}:current hour</li><li>${MINUTE}:current minute</li><li>${PRODUCT_NAME}:current IDE name</li><li>${PROJECT_NAME}:current project name</li></ul><p>你也可以自定义变量</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#set( $MAIL = "xxx@test.com" )</span></span><br></pre></td></tr></table></figure><p>然后就可以在模板中使用${MAIL}变量了</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PhpStorm 激活码</title>
       <link href="/2019/11/03/PhpStorm-%E6%BF%80%E6%B4%BB%E7%A0%81.html"/>
       <url>/2019/11/03/PhpStorm-%E6%BF%80%E6%B4%BB%E7%A0%81.html</url>
