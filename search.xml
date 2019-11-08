@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>Mysql修改root密码的4种方法</title>
+      <link href="/2019/11/09/Mysql%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95.html"/>
+      <url>/2019/11/09/Mysql%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="1：-用SET-PASSWORD命令"><a href="#1：-用SET-PASSWORD命令" class="headerlink" title="1： 用SET PASSWORD命令"></a>1： 用SET PASSWORD命令</h4><p>首先登录MySQL。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 格式：mysql&gt;</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> 用户名@localhost = <span class="keyword">password</span>(‘新密码’); </span><br><span class="line"><span class="comment">-- 例子：mysql&gt;</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> root@localhost = <span class="keyword">password</span>(‘<span class="number">123</span>’);</span><br></pre></td></tr></table></figure><h4 id="2：用mysqladmin"><a href="#2：用mysqladmin" class="headerlink" title="2：用mysqladmin"></a>2：用mysqladmin</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 格式：</span></span><br><span class="line">mysqladmin -u用户名 -p旧密码 password 新密码 </span><br><span class="line"><span class="comment">-- 例子：</span></span><br><span class="line">mysqladmin -uroot -p123456 password 123</span><br></pre></td></tr></table></figure><h4 id="3：用UPDATE直接编辑user表"><a href="#3：用UPDATE直接编辑user表" class="headerlink" title="3：用UPDATE直接编辑user表"></a>3：用UPDATE直接编辑user表</h4><p>首先登录MySQL。 </p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> mysql; </span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(‘<span class="number">123</span>’) <span class="keyword">where</span> <span class="keyword">user</span>=’root’ <span class="keyword">and</span> host=’localhost’; </span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br></pre></td></tr></table></figure><h4 id="4：在忘记root密码的时候，可以这样"><a href="#4：在忘记root密码的时候，可以这样" class="headerlink" title="4：在忘记root密码的时候，可以这样"></a>4：在忘记root密码的时候，可以这样</h4><p>以windows为例： </p><ul><li><ol><li>关闭正在运行的MySQL服务。 </li></ol></li><li><ol start="2"><li>打开DOS窗口，转到mysql\bin目录。 </li></ol></li><li><ol start="3"><li>输入mysqld –skip-grant-tables 回车。–skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。 </li></ol></li><li><ol start="4"><li>再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 </li></ol></li><li><ol start="5"><li>输入mysql回车，如果成功，将出现MySQL提示符 &gt;。 </li></ol></li><li><ol start="6"><li>连接权限数据库： use mysql; 。 </li></ol></li><li><ol start="6"><li>改密码：update user set password=password(“123”) where user=”root”;（别忘了最后加分号） 。 </li></ol></li><li><ol start="7"><li>刷新权限（必须步骤）：flush privileges;　。 </li></ol></li><li><ol start="8"><li>退出 quit。 </li></ol></li><li><ol start="9"><li>注销系统，再进入，使用用户名root和刚才设置的新密码123登录。</li></ol></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PS快捷键大全</title>
+      <link href="/2019/11/04/PS%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8.html"/>
+      <url>/2019/11/04/PS%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="图层相关"><a href="#图层相关" class="headerlink" title="图层相关"></a>图层相关</h4><ul><li>Cmd + Shift +N 新建图层</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PhpStorm修改php文件头模板</title>
       <link href="/2019/11/04/PhpStorm%E4%BF%AE%E6%94%B9php%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A8%A1%E6%9D%BF.html"/>
       <url>/2019/11/04/PhpStorm%E4%BF%AE%E6%94%B9php%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A8%A1%E6%9D%BF.html</url>
