@@ -396,43 +396,57 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h5 id="推荐常用命令："><a href="#推荐常用命令：" class="headerlink" title="推荐常用命令："></a>推荐常用命令：</h5><ul>
+        <h4 id="推荐常用命令："><a href="#推荐常用命令：" class="headerlink" title="推荐常用命令："></a>推荐常用命令：</h4><ul>
 <li>. 重复上一次的操作</li>
 <li>*光标放在单词上直接查找该单词</li>
 <li>u 恢复上一步的操作</li>
 </ul>
-<h5 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h5><ul>
+<h4 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h4><ul>
 <li>i进入插入模式</li>
 <li>Esc 或&lt;C-[&gt; 退回命令模式</li>
 <li><C-o>临时进入命令模式或插入模式</li>
 </ul>
-<h5 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h5><ul>
-<li>j  向下移动</li>
-<li>k 向上移动</li>
-<li>h 向左移动</li>
-<li>l 向右移动</li>
-<li>Ctrl+f 向下翻页</li>
-<li>Ctrl+b 向上翻页</li>
-<li>Ctrl+u 向上翻半页</li>
-<li>Ctrl+d 向下翻半页</li>
-<li>f字符 将光标定位到向后查找的字符上</li>
-<li>F字符 将光标定位到向前查找的字符上</li>
-</ul>
-<h5 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h5><ul>
+<h4 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h4><ul>
 <li>a 在光标后面插入</li>
 <li>A 在当前行的最后面插入</li>
 <li>i 在光标当前位置插入</li>
 </ul>
-<h5 id="查找模式"><a href="#查找模式" class="headerlink" title="查找模式"></a>查找模式</h5><ul>
+<h4 id="查找模式"><a href="#查找模式" class="headerlink" title="查找模式"></a>查找模式</h4><ul>
 <li>/内容  直接查找你要的内容</li>
 <li>n  跳转到下一个查找匹配的内容</li>
 <li>N 跳转的上一个查找匹配的内容</li>
 <li>*光标放在单词上直接查找该单词</li>
 </ul>
-<h5 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h5><ul>
+<h4 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h4><h5 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h5><ul>
+<li>j  向下移动</li>
+<li>k 向上移动</li>
+<li>h 向左移动</li>
+<li>l 向右移动</li>
+<li>n<space> 向后移动n个字符</li>
+<li>n<Enter> 向下移动n行字符</li>
+<li>G 移动到最后一行</li>
+<li>nG 移动到n行</li>
+<li>gg 移动到首行</li>
+<li>Ctrl+f 向下翻页</li>
+<li>Ctrl+b 向上翻页</li>
+<li>Ctrl+u 向上翻半页</li>
+<li>Ctrl+d 向下翻半页</li>
+<li>f字符 将光标定位到向后查找的字符上</li>
+<li>F字符 将光标定位到向前查找的字符上<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5></li>
 <li>dw 先后删除一个单词</li>
+<li>db 先前删除一个单词</li>
 <li>dd 删除当前行</li>
-<li>3dd 向下删除3行</li>
+<li>ndd 向下删除n行</li>
+<li>d1G    删除光标所在到第一行的所有数据</li>
+<li>dG    删除光标所在到最后一行的所有数据</li>
+<li>d$    删除游标所在处，到该行的最后一个字符</li>
+<li>d0    那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5></li>
+<li>yy    复制游标所在的那一行(常用)</li>
+<li>nyy    n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)</li>
+<li>y1G    复制游标所在行到第一行的所有数据</li>
+<li>yG    复制游标所在行到最后一行的所有数据</li>
+<li>y0    复制光标所在的那个字符到该行行首的所有数据</li>
+<li>y$    复制光标所在的那个字符到该行行尾的所有数据</li>
 </ul>
 
       </div>
@@ -445,10 +459,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-24T02:18:28+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-11T03:29:29+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年10月24日</p>
+    <p>更新于 2019年11月11日</p>
   </a>
 </div>
 
@@ -686,7 +700,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#推荐常用命令："><span class="toc-text">推荐常用命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#模式切换"><span class="toc-text">模式切换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#光标移动"><span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入模式"><span class="toc-text">插入模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查找模式"><span class="toc-text">查找模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编辑模式"><span class="toc-text">编辑模式</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#推荐常用命令："><span class="toc-text">推荐常用命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模式切换"><span class="toc-text">模式切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入模式"><span class="toc-text">插入模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查找模式"><span class="toc-text">查找模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编辑模式"><span class="toc-text">编辑模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#光标移动"><span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除"><span class="toc-text">删除</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复制"><span class="toc-text">复制</span></a></li></ol></li></ol>
     </div>
   </section>
 
