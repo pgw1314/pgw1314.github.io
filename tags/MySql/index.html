@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: MySql | 爱WiKi</title>
+  <title>Tag: MySQL | 爱WiKi</title>
   
   
   <meta name="description" content="记录自己的日常">
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
   
 
   
@@ -31,7 +32,7 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+    <link rel="stylesheet" href="/style.css">
   
 
   <script>
@@ -325,8 +326,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/11/02/Mac%E5%AE%89%E8%A3%85PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%88%E4%BD%BF%E7%94%A8homebrew.html">
-      Mac安装PHP开发环境（使用homebrew)
+    <a href="/2019/11/09/Mysql%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95.html">
+      Mysql修改root密码的4种方法
     </a>
   </h2>
 
@@ -356,7 +357,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-11-02</p>
+    <p>2019-11-09</p>
   </a>
 </div>
 
@@ -366,9 +367,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/Mac/' rel="nofollow">
+    <a href='/categories/MySQL/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Mac</p>
+      <p>MySQL</p>
     </a>
   </div>
 
@@ -393,7 +394,7 @@
       
       
         <div class="readmore">
-          <a href="/2019/11/02/Mac%E5%AE%89%E8%A3%85PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%88%E4%BD%BF%E7%94%A8homebrew.html" class="flat-box">
+          <a href="/2019/11/09/Mysql%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95.html" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -403,13 +404,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 开发环境</a>
-        
-          <a href="/tags/PHP/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> PHP</a>
-        
-          <a href="/tags/Nginx/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Nginx</a>
-        
-          <a href="/tags/MySql/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySql</a>
+          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
         
       </div>
     
@@ -932,31 +927,6 @@
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
-
 
 
 
@@ -1070,6 +1040,24 @@
       $(element).attr("href", $(this).attr("src"));
       /* 图片采用懒加载处理时,
        * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
+地址，比如 data-original,
        * 那么此处将原本的属性名src替换为对应属性名data-original,
        * 修改如下
        */
